@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export default styled.div`
+export const ListWrapper = styled.div`
     width: 280px;
     background-color: ${props => props.theme.colors.listBackground};
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 700;
     border-radius: 4px;
     overflow: hidden;
     margin-right: 8px;
@@ -12,20 +12,22 @@ export default styled.div`
 
     header{
         height: 40px;
-
+    
         p{
-            padding: 10px;
+            padding: 14px 20px;
         }
         
     }
 
     footer{
         height: 40px;
-        padding: 4px 10px;
+        padding: 10px;
+        padding-top: 0;
 
         p{
         font-size: 12px;
-        padding: 8px 10px;
+        font-weight: 600;
+        padding: 6px 16px;
         cursor: pointer;
 
             &:hover{
@@ -34,5 +36,8 @@ export default styled.div`
             }
         }
     }
+`
 
+export const ListContent = styled.div`
+    padding-bottom: 8px;
 `

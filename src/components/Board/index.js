@@ -8,9 +8,9 @@ import List from '../List';
 export default function Board() {
     return (
         <Container background={background}>
-            <List title="A fazer" />
-            <List title="Em andamento" />
-            <List title="Concluído" />
+            <List titleList="A fazer" />
+            <List titleList="Em andamento" />
+            <List titleList="Concluído" />
         </Container>
     );
 }
