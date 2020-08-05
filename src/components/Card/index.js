@@ -1,11 +1,12 @@
 import React from 'react';
 
-import Card from './styles';
+import { Container, CardLabel } from './styles';
 
-export default function (props) {
+export default function ({ card }) {
     return (
-        <Card>
-            <p>{props.titleCard}</p>
-        </Card>
+        <Container>
+            <CardLabel color={card.labelColor}>&nbsp;</CardLabel>
+            <p>{card.title}</p>
+        </Container>
     );
 }

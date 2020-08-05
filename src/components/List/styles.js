@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const ListWrapper = styled.div`
-    width: 280px;
+    width: 270px;
     background-color: ${props => props.theme.colors.listBackground};
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     border-radius: 4px;
     overflow: hidden;
     margin-right: 8px;
@@ -40,4 +40,5 @@ export const ListWrapper = styled.div`
 
 export const ListContent = styled.div`
     padding-bottom: 8px;
+    min-height: 100px;
 `
