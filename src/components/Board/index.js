@@ -10,13 +10,15 @@ import api from '../../services/api';
 
 export default function Board() {
     const [listCards, setListCards] = useState([]);
+    const [colors, setColors] = useState([]);
 
     useEffect(() => {
-        api.get('lists?_embed=cards').then(response => setListCards(response.data))
+        api.get('lists?_embed=cards').then(response => setListCards(response.data));
+        api.get('colors').then(response => setColors(response.data));
     }, [])
 
     return (
-        <BoardContext.Provider value={{ listCards, setListCards }}>
+        <BoardContext.Provider value={{ listCards, setListCards, colors, setColors }}>
             <Container background={background}>
                 {listCards.map(list => {
                     return <List key={list.id} list={list} />

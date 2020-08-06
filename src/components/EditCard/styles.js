@@ -32,7 +32,7 @@ export const Content = styled.div`
         margin: 26px 0 10px 0;
     }
 
-    svg{
+    input + svg{
         position: absolute;
         right: 20px;
         color: ${props => props.theme.colors.text};

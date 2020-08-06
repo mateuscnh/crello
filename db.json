@@ -18,19 +18,36 @@
       "id": 0,
       "listId": 0,
       "title": "",
-      "labelColor": ""
+      "color": ""
     },
     {
       "listId": 1,
       "title": "Harry Potter",
-      "labelColor": "#43bccd",
+      "color": "#c8553d",
       "id": 1
+    }
+  ],
+  "colors": [
+    {
+      "color": "#f9c80e"
     },
     {
-      "listId": 2,
-      "title": "mateus",
-      "labelColor": "#f9c80e",
-      "id": 2
+      "color": "#f86624"
+    },
+    {
+      "color": "#c8553d"
+    },
+    {
+      "color": "#ea3546"
+    },
+    {
+      "color": "#662e9b"
+    },
+    {
+      "color": "#43bccd"
+    },
+    {
+      "color": "#333533"
     }
   ]
 }

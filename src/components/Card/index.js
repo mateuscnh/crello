@@ -9,7 +9,7 @@ export default function ({ card }) {
     return (
         <>
             <Container onClick={() => setEditCard(true)}>
-                <CardLabel color={card.labelColor}>&nbsp;</CardLabel>
+                <CardLabel color={card.color}>&nbsp;</CardLabel>
                 <p>{card.title}</p>
             </Container >
             {editCard &&
