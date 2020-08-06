@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+export const FadeIn = keyframes`
+    from{opacity: 0}
+`
 
 export const Container = styled.div`
     position: absolute;
@@ -15,13 +19,18 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     position: relative;
-    padding: 20px;
+    padding: 30px;
     min-width: 400px;
-    min-height: 400px;
     border-radius: 4px;
 
     color: ${props => props.theme.colors.text};
     background-color: ${props => props.theme.colors.listBackground};
+
+    animation: ${FadeIn} .15s linear;
+
+    h3{
+        margin: 26px 0 10px 0;
+    }
 
     svg{
         position: absolute;
@@ -39,11 +48,40 @@ export const Content = styled.div`
 `
 
 export const Input = styled.input`
+    width: 100%;
+    padding: 10px;
     font-size: 24px;
     font-weight: bold;
     background: none;
     border: none;
     color: ${props => props.theme.colors.text};
+    :focus{
+        background-color: ${props => props.theme.colors.cardBackground};
+        outline: none;
+    }
+`
+
+export const LabelColor = styled.div`
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
+    background-color: ${props => props.color};
+    cursor: pointer;
+    transition: opacity .2s;
+    :hover{
+        opacity: .8;
+    }
+`
+
+export const TextArea = styled.textarea`
+    width: 100%;
+    min-height: 60px;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: rgba(0,0,0,.05);
+    resize: vertical;
+    transition: .3s;
     :focus{
         background-color: ${props => props.theme.colors.cardBackground};
         outline: none;

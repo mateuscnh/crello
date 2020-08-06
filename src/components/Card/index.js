@@ -4,7 +4,7 @@ import { Container, CardLabel } from './styles';
 import EditCard from '../EditCard';
 
 export default function ({ card }) {
-    const [editCard, setEditCard] = useState(true);
+    const [editCard, setEditCard] = useState(false);
 
     return (
         <>

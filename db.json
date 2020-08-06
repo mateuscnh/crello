@@ -1,0 +1,36 @@
+{
+  "lists": [
+    {
+      "id": 1,
+      "title": "A fazer"
+    },
+    {
+      "id": 2,
+      "title": "Em andamento"
+    },
+    {
+      "id": 3,
+      "title": "Concluído"
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "listId": 1,
+      "title": "Harry Potter",
+      "labelColor": "black"
+    },
+    {
+      "id": 2,
+      "listId": 2,
+      "title": "Marvel",
+      "labelColor": "red"
+    },
+    {
+      "id": 3,
+      "listId": 3,
+      "title": "DC",
+      "labelColor": "blue"
+    }
+  ]
+}
