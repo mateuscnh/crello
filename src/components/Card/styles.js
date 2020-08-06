@@ -8,10 +8,11 @@ export const Container = styled.div`
     border-radius: 4px;
     box-shadow: 0 2px 0 0 #ccc;
     cursor: pointer;
-    transition: background-color .2s;
+    transition: background-color .2s; 
     
     p{
         font-weight: 300;
+        pointer-events: none;
     }
 
     :hover{
@@ -24,6 +25,7 @@ export const CardLabel = styled.span`
     display: block;
     width: 16%;
     height: 8px;
-    border-radius: 3px;
+    border-radius: 4px;
     margin-bottom: 6px;
+
 `;

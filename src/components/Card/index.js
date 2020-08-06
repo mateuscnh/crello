@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Container, CardLabel } from './styles';
+import EditCard from '../EditCard';
 
 export default function ({ card }) {
+    const [editCard, setEditCard] = useState(true);
+
     return (
-        <Container>
-            <CardLabel color={card.labelColor}>&nbsp;</CardLabel>
-            <p>{card.title}</p>
-        </Container>
+        <>
+            <Container onClick={() => setEditCard(true)}>
+                <CardLabel color={card.labelColor}>&nbsp;</CardLabel>
+                <p>{card.title}</p>
+            </Container >
+            {editCard &&
+                <EditCard card={card} onClose={() => { setEditCard(false) }} />
+            }
+        </>
     );
 }
