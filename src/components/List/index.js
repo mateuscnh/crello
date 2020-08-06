@@ -10,7 +10,7 @@ import LabelColor from '../LabelColor';
 
 export default function List({ list }) {
     const { listCards, setListCards } = useContext(BoardContext);
-    const { colors, setColors } = useContext(BoardContext);
+    const { colors } = useContext(BoardContext);
 
     const [isNewCard, setNewCard] = useState(false);
     const [title, setTitle] = useState('');
@@ -21,9 +21,12 @@ export default function List({ list }) {
     }, [colors])
 
     async function addNewCard() {
+        const description = '';
+
         const newCard = await api.post('cards', {
             listId: list.id,
             title,
+            description,
             color
         })
 

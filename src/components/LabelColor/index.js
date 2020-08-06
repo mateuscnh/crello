@@ -31,7 +31,7 @@ export default function ({ color, changeColor }) {
                 <FaCheck />
             </LabelColor>
             {colorsActive &&
-                <Colors onClose={(color) => {
+                <Colors chosenColor={chosenColor} onClose={(color) => {
                     setChosenColor(color);
                     if (changeColor) {
                         changeColor(color);

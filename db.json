@@ -18,13 +18,22 @@
       "id": 0,
       "listId": 0,
       "title": "",
+      "description": "",
       "color": ""
     },
     {
       "listId": 1,
       "title": "Harry Potter",
+      "description": "Filmão da porra",
       "color": "#c8553d",
       "id": 1
+    },
+    {
+      "listId": 2,
+      "title": "asdqweq",
+      "description": "qeqwe",
+      "color": "#f86624",
+      "id": 2
     }
   ],
   "colors": [

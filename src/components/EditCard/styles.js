@@ -30,6 +30,7 @@ export const Content = styled.div`
 
     h3{
         margin: 26px 0 10px 0;
+        padding: 6px;
     }
 
     input + svg{
@@ -48,13 +49,19 @@ export const Content = styled.div`
 `
 
 export const Input = styled.input`
-    width: 100%;
-    padding: 10px;
+    width: 96%;
+    padding: 6px;
     font-size: 24px;
     font-weight: bold;
     background: none;
     border: none;
     color: ${props => props.theme.colors.text};
+
+    ::after{
+        content: ' as';
+        border: 2px solid red;
+    }
+    
     :focus{
         background-color: ${props => props.theme.colors.cardBackground};
         outline: none;
@@ -70,6 +77,7 @@ export const TextArea = styled.textarea`
     background-color: rgba(0,0,0,.05);
     resize: vertical;
     transition: .3s;
+    
     :focus{
         background-color: ${props => props.theme.colors.cardBackground};
         outline: none;
