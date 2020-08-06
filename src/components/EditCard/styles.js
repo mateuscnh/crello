@@ -61,18 +61,6 @@ export const Input = styled.input`
     }
 `
 
-export const LabelColor = styled.div`
-    width: 34px;
-    height: 34px;
-    border-radius: 4px;
-    background-color: ${props => props.color};
-    cursor: pointer;
-    transition: opacity .2s;
-    :hover{
-        opacity: .8;
-    }
-`
-
 export const TextArea = styled.textarea`
     width: 100%;
     min-height: 60px;

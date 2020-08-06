@@ -1,7 +1,9 @@
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
 
-import { Container, Content, LabelColor, Input, TextArea } from './styles';
+import LabelColor from '../LabelColor';
+
+import { Container, Content, Input, TextArea } from './styles';
 
 function EditCard({ card, onClose }) {
 

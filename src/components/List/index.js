@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react';
+import { FaTimes } from 'react-icons/fa';
 
 import BoardContext from '../Board/context';
 
-import { ListWrapper, ListContent, Input } from './styles';
+import { ListWrapper, ListContent, Input, NewCard } from './styles';
 import Card from '../Card';
 import api from '../../services/api';
+import LabelColor from '../LabelColor';
 
 export default function List({ list }) {
     const { listCards, setListCards } = useContext(BoardContext);
@@ -12,9 +14,12 @@ export default function List({ list }) {
     const [title, setTitle] = useState('');
 
     async function addNewCard() {
+        const labelColor = document.querySelector('.labelColor').getAttribute('color');
+
         const newCard = await api.post('cards', {
             listId: list.id,
-            title
+            title,
+            labelColor
         })
 
         const updateListCards = await listCards.map(listCard => {
@@ -38,10 +43,14 @@ export default function List({ list }) {
                 })}
             </ListContent>
             {isNewCard ?
-                <footer>
+                <NewCard>
                     <Input autoFocus name="title" placeholder="Insira um título para este cartão..." onChange={(e) => setTitle(e.target.value)} />
-                    <button type="button" onClick={addNewCard}>Adicionar Cartão</button>
-                </footer>
+                    <footer>
+                        <LabelColor color="red" />
+                        <button type="button" onClick={addNewCard}>Adicionar Cartão</button>
+                        <FaTimes onClick={() => setNewCard(false)} />
+                    </footer>
+                </NewCard>
                 :
                 <footer><p onClick={() => setNewCard(true)}>+ Adicionar outro cartão</p></footer>
             }

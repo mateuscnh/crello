@@ -27,5 +27,4 @@ export const CardLabel = styled.span`
     height: 8px;
     border-radius: 4px;
     margin-bottom: 6px;
-
 `;
