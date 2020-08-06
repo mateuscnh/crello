@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaCheck } from 'react-icons/fa';
+import Colors from './Colors';
 
 const LabelColor = styled.div`
     width: 34px;
@@ -22,10 +23,20 @@ const LabelColor = styled.div`
     }
 `
 
-export default function ({ color }) {
+export default function ({ color, changeColor }) {
+    const [colorsActive, setColorsActive] = useState(false);
+
     return (
-        <LabelColor className="labelColor" color={color}>
-            <FaCheck />
-        </LabelColor>
+        <>
+            <LabelColor className="labelColor" color={color} onClick={() => setColorsActive(true)}>
+                <FaCheck />
+            </LabelColor>
+            {colorsActive &&
+                <Colors onClose={(color) => {
+                    changeColor(color);
+                    setColorsActive(false);
+                }} />
+            }
+        </>
     );
 }

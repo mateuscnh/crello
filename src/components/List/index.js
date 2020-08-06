@@ -12,10 +12,9 @@ export default function List({ list }) {
     const { listCards, setListCards } = useContext(BoardContext);
     const [isNewCard, setNewCard] = useState(false);
     const [title, setTitle] = useState('');
+    const [labelColor, setlabelColor] = useState('#f9c80e');
 
     async function addNewCard() {
-        const labelColor = document.querySelector('.labelColor').getAttribute('color');
-
         const newCard = await api.post('cards', {
             listId: list.id,
             title,
@@ -46,13 +45,13 @@ export default function List({ list }) {
                 <NewCard>
                     <Input autoFocus name="title" placeholder="Insira um título para este cartão..." onChange={(e) => setTitle(e.target.value)} />
                     <footer>
-                        <LabelColor color="red" />
+                        <LabelColor color={labelColor} changeColor={color => setlabelColor(color)} />
                         <button type="button" onClick={addNewCard}>Adicionar Cartão</button>
                         <FaTimes onClick={() => setNewCard(false)} />
                     </footer>
                 </NewCard>
                 :
-                <footer><p onClick={() => setNewCard(true)}>+ Adicionar outro cartão</p></footer>
+                <footer><p onClick={() => setNewCard(true)}>+ Adicionar cartão</p></footer>
             }
         </ListWrapper>
     );

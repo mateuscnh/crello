@@ -15,34 +15,22 @@
   ],
   "cards": [
     {
-      "id": 1,
+      "id": 0,
+      "listId": 0,
+      "title": "",
+      "labelColor": ""
+    },
+    {
       "listId": 1,
       "title": "Harry Potter",
-      "labelColor": "black"
-    },
-    {
-      "id": 2,
-      "listId": 2,
-      "title": "Marvel",
-      "labelColor": "red"
-    },
-    {
-      "id": 3,
-      "listId": 3,
-      "title": "DC",
-      "labelColor": "blue"
-    },
-    {
-      "listId": 1,
-      "title": "Cunha",
-      "labelColor": "red",
-      "id": 4
+      "labelColor": "#43bccd",
+      "id": 1
     },
     {
       "listId": 2,
       "title": "mateus",
-      "labelColor": "yellow",
-      "id": 5
+      "labelColor": "#f9c80e",
+      "id": 2
     }
   ]
 }
