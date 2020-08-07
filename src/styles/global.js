@@ -13,4 +13,8 @@ export default createGlobalStyle`
         background-color: #fff;
     }
 
+    input, button, textarea{
+        outline: none;
+        border: none;
+    }
 `

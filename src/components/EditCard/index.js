@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { FaTimes } from 'react-icons/fa';
+import React, { useContext, useState } from 'react';
+import { FaTimes, FaQuoteRight, FaTag } from 'react-icons/fa';
 
 import BoardContext from '../Board/context';
 
@@ -47,13 +47,18 @@ function EditCard({ card, onClose }) {
     return (
         <Container id="modal" onClick={handleClose}>
             <Content>
-                <Input type="text" defaultValue={card.title} onChange={(e) => setTitle(e.target.value)} />
+                <Input
+                    type="text"
+                    defaultValue={card.title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    autoComplete="off"
+                />
                 <FaTimes onClick={onClose} />
 
-                <h3>Descrição</h3>
+                <h3><FaQuoteRight />Descrição</h3>
                 <TextArea placeholder="Adicione uma descrição mais detalhada..." defaultValue={card.description} onChange={(e) => setDescription(e.target.value)} />
 
-                <h3>Etiqueta</h3>
+                <h3><FaTag />Etiqueta</h3>
                 <LabelColor color={card.color} changeColor={(color) => setColor(color)} />
 
             </Content>

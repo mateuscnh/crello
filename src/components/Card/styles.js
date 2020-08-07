@@ -1,6 +1,11 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const FadeInRight = keyframes`
+    from{width: 0%}
+`
 
 export const Container = styled.div`
+    position: relative;
     background-color: ${props => props.theme.colors.cardBackground};
     min-height: 40px;
     margin: 10px;
@@ -18,6 +23,19 @@ export const Container = styled.div`
     :hover{
         background-color: ${props => props.theme.colors.cardBackgroundDark};
     }
+
+    :hover svg{
+        opacity: .8;
+    }
+
+    svg{
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: .15s;
+    }
 `
 
 export const CardLabel = styled.span`
@@ -27,4 +45,5 @@ export const CardLabel = styled.span`
     height: 8px;
     border-radius: 4px;
     margin-bottom: 6px;
+    animation: ${FadeInRight} .5s linear;
 `;

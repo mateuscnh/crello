@@ -5,7 +5,7 @@ const FadeIn = keyframes`
 `
 export const Container = styled.div`
     position: absolute;
-    top: 0;
+    top: 50px;
     z-index: 10;
     padding: 10px;
     border-radius: 4px;
@@ -13,7 +13,7 @@ export const Container = styled.div`
 
     color: ${props => props.theme.colors.text};
     background-color: ${props => props.theme.colors.listBackground};
-    box-shadow: 0 2px 0 0 #ccc;
+    box-shadow: 0 6px 20px 0 #555;
 
     animation: ${FadeIn} .15s linear;
 `

@@ -15,11 +15,15 @@ export const Container = styled.div`
 
     display: grid;
     place-items: center;
+    
+    animation: ${FadeIn} .15s linear;
+    background-color: rgba(0, 0, 0, .5);
 `
 
 export const Content = styled.div`
     position: relative;
-    padding: 30px;
+    padding: 20px;
+    padding-bottom: 60px;
     min-width: 400px;
     border-radius: 4px;
 
@@ -29,12 +33,13 @@ export const Content = styled.div`
     animation: ${FadeIn} .15s linear;
 
     h3{
-        margin: 26px 0 10px 0;
+        margin: 24px 0 10px 0;
         padding: 6px;
     }
 
-    input + svg{
+    > svg{
         position: absolute;
+        top: 20px;
         right: 20px;
         color: ${props => props.theme.colors.text};
 
@@ -46,32 +51,36 @@ export const Content = styled.div`
             transform: scale(1.3);
         }
     }
+
+    h3 svg{
+        font-size: 12px;
+        margin-right: 10px;
+        opacity: .5;
+    }
+
+    h3 + div, textarea{
+        margin-left: 28px;
+    }
 `
 
 export const Input = styled.input`
-    width: 96%;
-    padding: 6px;
-    font-size: 24px;
+    width: 90%;
+    padding: 10px;
+    font-size: 22px;
     font-weight: bold;
     background: none;
-    border: none;
+    border-radius: 4px;
     color: ${props => props.theme.colors.text};
-
-    ::after{
-        content: ' as';
-        border: 2px solid red;
-    }
     
     :focus{
         background-color: ${props => props.theme.colors.cardBackground};
-        outline: none;
     }
 `
 
 export const TextArea = styled.textarea`
-    width: 100%;
+    width: 90%;
     min-height: 60px;
-    border: none;
+    max-height: 240px;
     border-radius: 4px;
     padding: 10px;
     background-color: rgba(0,0,0,.05);
@@ -80,6 +89,5 @@ export const TextArea = styled.textarea`
     
     :focus{
         background-color: ${props => props.theme.colors.cardBackground};
-        outline: none;
     }
 `
