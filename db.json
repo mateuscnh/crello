@@ -1,20 +1,16 @@
 {
   "lists": [
     {
-      "id": 1,
-      "title": "A fazer"
+      "id": 0,
+      "title": ""
     },
     {
-      "id": 2,
-      "title": "Em andamento"
+      "title": "Primeira Lista",
+      "id": 1
     },
     {
-      "id": 3,
-      "title": "Concluído"
-    },
-    {
-      "title": "sd",
-      "id": 4
+      "title": "Segunda Lista",
+      "id": 2
     }
   ],
   "cards": [
@@ -26,25 +22,48 @@
       "color": ""
     },
     {
-      "listId": 2,
-      "title": "Code Refactoring",
-      "description": "Cunha quirino",
+      "listId": 1,
+      "title": "Primeiro Cartão",
+      "description": "",
       "color": "#ea3546",
       "id": 1
     },
     {
-      "listId": 3,
-      "title": "Colors Label",
+      "listId": 2,
+      "title": "Segundo Cartão",
       "description": "",
-      "color": "#662e9b",
+      "color": "#f9c80e",
       "id": 2
     },
     {
-      "listId": 1,
-      "title": "Added New List",
+      "listId": 2,
+      "title": "Terceiro Cartão",
       "description": "",
-      "color": "#43bccd",
+      "color": "#f86624",
       "id": 3
+    }
+  ],
+  "colors": [
+    {
+      "color": "#f9c80e"
+    },
+    {
+      "color": "#f86624"
+    },
+    {
+      "color": "#c8553d"
+    },
+    {
+      "color": "#ea3546"
+    },
+    {
+      "color": "#662e9b"
+    },
+    {
+      "color": "#43bccd"
+    },
+    {
+      "color": "#333533"
     }
   ]
 }

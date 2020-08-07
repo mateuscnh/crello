@@ -10,7 +10,7 @@ export default createGlobalStyle`
 
     body{
         height: 100%;
-        background-color: #fff;
+        background-color: #111;
     }
 
     input, button, textarea{

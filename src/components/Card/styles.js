@@ -45,5 +45,5 @@ export const CardLabel = styled.span`
     height: 8px;
     border-radius: 4px;
     margin-bottom: 6px;
-    animation: ${FadeInRight} .5s linear;
+    animation: ${FadeInRight} .3s linear;
 `;

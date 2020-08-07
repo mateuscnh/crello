@@ -13,6 +13,8 @@ export const ListWrapper = styled.div`
     margin-right: 8px;
     color: ${props => props.theme.colors.text};
 
+    animation: ${FadeIn} .2s linear;
+
     header{
         height: 40px;
     

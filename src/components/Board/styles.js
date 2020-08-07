@@ -10,7 +10,9 @@ export const Container = styled.div`
     height: 100vh;
     background: url(${props => props.background}) no-repeat center;
     background-attachment: fixed;
-    background-size: cover; 
+    background-size: cover;
+
+    animation: ${FadeIn} .3s linear;
 
     button + svg{
         font-size: 22px;
@@ -57,9 +59,12 @@ export const AddNewList = styled.div`
     color: #fff;
     background-color: rgba(250, 250, 250, .2);
     border-radius: 4px;
-    padding: 10px;
+    padding: 6px 10px;
     transition: .15s;
     cursor: pointer;
+    font-size: 14px;
+
+    animation: ${FadeIn} .15s linear;
 
     :hover{
         background-color: rgba(250, 250, 250, .4);
