@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { FaPlus } from 'react-icons/fa';
 
 const FadeIn = keyframes`
     from{opacity: 0}
@@ -7,10 +6,12 @@ const FadeIn = keyframes`
 
 export const Container = styled.div`
     position: fixed;
+    padding: 2%;
     width: 100vw;
     height: 100vh;
     background: url(${props => props.background}) no-repeat center;
     background-size: cover; 
+    overflow: auto;
 
     button + svg{
         font-size: 22px;
@@ -26,13 +27,13 @@ export const Container = styled.div`
 `
 
 export const ListWrapper = styled.div`
-    padding: 2%;
     display: flex;
     align-items: flex-start;
 `
 
 export const CreateNewList = styled.div`
-    width: 270px;
+    margin-right: 300px;
+    min-width: 270px;
     color: ${props => props.theme.colors.text};
     background-color: ${props => props.theme.colors.listBackground};
     padding: 10px;
@@ -48,16 +49,19 @@ export const CreateNewList = styled.div`
     }
 `
 
-export const AddNewList = styled(FaPlus)`
+export const AddNewList = styled.div`
+    margin-right: 300px;
+    min-width: 270px;
+    text-align: center;
     color: #fff;
     background-color: rgba(250, 250, 250, .2);
     border-radius: 4px;
     padding: 10px;
-    font-size: 36px;
     transition: .15s;
     cursor: pointer;
 
     :hover{
         background-color: rgba(250, 250, 250, .4);
     }
+
 `

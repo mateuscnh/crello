@@ -14,13 +14,30 @@ import api from '../../services/api';
 export default function Board() {
     const [listCards, setListCards] = useState([]);
     const [colors, setColors] = useState([]);
+    const [title, setTitle] = useState('');
 
     const [isNewList, setNewList] = useState(false);
 
     useEffect(() => {
         api.get('lists?_embed=cards').then(response => setListCards(response.data));
         api.get('colors').then(response => setColors(response.data));
-    }, [])
+    }, []);
+
+    async function addNewList() {
+
+        const newList = await api.post('lists', {
+            title
+        })
+
+        setListCards([...listCards, {
+            id: newList.data.id,
+            title: newList.data.title,
+            cards: []
+        }]);
+
+        setNewList(false);
+    }
+
 
     return (
         <BoardContext.Provider value={{ listCards, setListCards, colors, setColors }}>
@@ -32,16 +49,16 @@ export default function Board() {
                     {isNewList ?
                         <CreateNewList>
                             <Input placeholder="Insira um título para esta lista..."
-                                onChange={() => { }}
-                                onKeyPress={() => { }}
+                                onChange={(e) => setTitle(e.target.value)}
+                                onKeyPress={(e) => e.charCode === 13 && document.querySelector('button').click()}
                             />
                             <footer>
-                                <Button onClick={() => { }} />
+                                <Button onClick={addNewList} />
                                 <FaTimes onClick={() => setNewList(false)} />
                             </footer>
                         </CreateNewList>
                         :
-                        <AddNewList onClick={() => setNewList(true)} />
+                        <AddNewList onClick={() => setNewList(true)}>+ Adicionar lista</AddNewList>
                     }
                 </ListWrapper>
             </Container>

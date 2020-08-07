@@ -11,6 +11,10 @@
     {
       "id": 3,
       "title": "Concluído"
+    },
+    {
+      "title": "Falta",
+      "id": 4
     }
   ],
   "cards": [
@@ -55,6 +59,13 @@
       "description": "",
       "color": "#43bccd",
       "id": 5
+    },
+    {
+      "listId": 4,
+      "title": "Iapois",
+      "description": "",
+      "color": "#c8553d",
+      "id": 6
     }
   ],
   "colors": [

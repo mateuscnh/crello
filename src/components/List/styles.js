@@ -5,12 +5,11 @@ const FadeIn = keyframes`
 `
 
 export const ListWrapper = styled.div`
-    width: 270px;
+    min-width: 270px;
     background-color: ${props => props.theme.colors.listBackground};
     font-size: 14px;
     font-weight: 600;
     border-radius: 4px;
-    overflow: hidden;
     margin-right: 8px;
     color: ${props => props.theme.colors.text};
 
