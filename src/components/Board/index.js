@@ -25,7 +25,13 @@ export default function Board() {
         api.get('lists?_embed=cards').then(response => setListCards(response.data));
         api.get('colors').then(response => setColors(response.data));
 
-        setTimeout(() => setLoading(false), 2000);
+        setTimeout(() => {
+            document.querySelector('#loading').style.opacity = 0;
+            setTimeout(() => {
+                setLoading(false);
+            }, 500);
+        }, 1500);
+
     }, []);
 
     async function addNewList() {
@@ -45,40 +51,39 @@ export default function Board() {
 
     return (
         <BoardContext.Provider value={{ listCards, setListCards, colors, setColors }}>
-            {loading ?
+            {loading &&
                 <Loading />
-                :
-                <Container background="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop">
-
-                    <ListWrapper>
-                        {listCards.map(list => {
-                            if (list.id === 0) return null;
-                            return <List key={list.id} list={list} />
-                        })}
-
-                        {isNewList ?
-                            <>
-                                <CreateNewList>
-                                    <Input placeholder="Insira um título para esta lista..."
-                                        onChange={(e) => setTitle(e.target.value)}
-                                        onKeyPress={(e) => e.charCode === 13 && document.querySelector('button').click()}
-                                    />
-                                    <footer>
-                                        <Button onClick={addNewList} />
-                                        <FaTimes onClick={() => setNewList(false)} />
-                                    </footer>
-                                </CreateNewList>
-                                <h1>&nbsp;&nbsp;</h1>
-                            </>
-                            :
-                            <>
-                                <AddNewList onClick={() => setNewList(true)}>+ Adicionar lista</AddNewList>
-                                <h1>&nbsp;&nbsp;</h1>
-                            </>
-                        }
-                    </ListWrapper>
-                </Container>
             }
+            <Container background="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop">
+
+                <ListWrapper>
+                    {listCards.map(list => {
+                        if (list.id === 0) return null;
+                        return <List key={list.id} list={list} />
+                    })}
+
+                    {isNewList ?
+                        <>
+                            <CreateNewList>
+                                <Input placeholder="Insira um título para esta lista..."
+                                    onChange={(e) => setTitle(e.target.value)}
+                                    onKeyPress={(e) => e.charCode === 13 && document.querySelector('button').click()}
+                                />
+                                <footer>
+                                    <Button onClick={addNewList} />
+                                    <FaTimes onClick={() => setNewList(false)} />
+                                </footer>
+                            </CreateNewList>
+                            <h1>&nbsp;&nbsp;</h1>
+                        </>
+                        :
+                        <>
+                            <AddNewList onClick={() => setNewList(true)}>+ Adicionar lista</AddNewList>
+                            <h1>&nbsp;&nbsp;</h1>
+                        </>
+                    }
+                </ListWrapper>
+            </Container>
         </BoardContext.Provider>
     );
 }

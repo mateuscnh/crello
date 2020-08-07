@@ -12,8 +12,6 @@ export const Container = styled.div`
     background-attachment: fixed;
     background-size: cover;
 
-    animation: ${FadeIn} .3s linear;
-
     button + svg{
         font-size: 22px;
         opacity: .6;

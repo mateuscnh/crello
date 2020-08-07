@@ -47,7 +47,9 @@ export default function List({ list }) {
 
     return (
         <ListWrapper>
-            <header><p>{list.title}</p></header>
+            <header>
+                <p>{list.title}</p>
+            </header>
             <ListContent id="target">
                 {list.cards.map(card => {
                     return <Card key={card.id} card={card} />

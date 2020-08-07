@@ -21,7 +21,7 @@ const Container = styled.div`
 
     background-color: #111;
 
-    transition: 2s;
+    transition: .5s;
 `
 
 const BaseLogo = styled.div`
@@ -47,10 +47,10 @@ const Card = styled.div`
 
 export default function () {
     return (
-        <Container>
+        <Container id="loading">
             <BaseLogo>
-                <Card time="1.2s" />
-                <Card time="1s" />
+                <Card time=".8s" />
+                <Card time=".6s" />
             </BaseLogo>
         </Container>
     );
