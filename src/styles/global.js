@@ -17,4 +17,19 @@ export default createGlobalStyle`
         outline: none;
         border: none;
     }
+
+    ::-webkit-scrollbar {
+        height: 12px;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 4px;
+        background: rgba( 255, 255, 255, .4); 
+    }
+
+    ::-webkit-scrollbar-track-piece{
+        margin: 1%;
+    }
 `

@@ -13,7 +13,7 @@
       "title": "Concluído"
     },
     {
-      "title": "Falta",
+      "title": "sd",
       "id": 4
     }
   ],
@@ -45,50 +45,6 @@
       "description": "",
       "color": "#43bccd",
       "id": 3
-    },
-    {
-      "listId": 3,
-      "title": "Marvel",
-      "description": "",
-      "color": "#ea3546",
-      "id": 4
-    },
-    {
-      "listId": 3,
-      "title": "DC",
-      "description": "",
-      "color": "#43bccd",
-      "id": 5
-    },
-    {
-      "listId": 4,
-      "title": "Iapois",
-      "description": "",
-      "color": "#c8553d",
-      "id": 6
-    }
-  ],
-  "colors": [
-    {
-      "color": "#f9c80e"
-    },
-    {
-      "color": "#f86624"
-    },
-    {
-      "color": "#c8553d"
-    },
-    {
-      "color": "#ea3546"
-    },
-    {
-      "color": "#662e9b"
-    },
-    {
-      "color": "#43bccd"
-    },
-    {
-      "color": "#333533"
     }
   ]
 }

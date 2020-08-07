@@ -41,24 +41,30 @@ export default function Board() {
 
     return (
         <BoardContext.Provider value={{ listCards, setListCards, colors, setColors }}>
-            <Container background="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop">
-                <ListWrapper>
+            <Container id="board" background="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop">
+                <ListWrapper id="list">
                     {listCards.map(list => {
                         return <List key={list.id} list={list} />
                     })}
                     {isNewList ?
-                        <CreateNewList>
-                            <Input placeholder="Insira um título para esta lista..."
-                                onChange={(e) => setTitle(e.target.value)}
-                                onKeyPress={(e) => e.charCode === 13 && document.querySelector('button').click()}
-                            />
-                            <footer>
-                                <Button onClick={addNewList} />
-                                <FaTimes onClick={() => setNewList(false)} />
-                            </footer>
-                        </CreateNewList>
+                        <>
+                            <CreateNewList>
+                                <Input placeholder="Insira um título para esta lista..."
+                                    onChange={(e) => setTitle(e.target.value)}
+                                    onKeyPress={(e) => e.charCode === 13 && document.querySelector('button').click()}
+                                />
+                                <footer>
+                                    <Button onClick={addNewList} />
+                                    <FaTimes onClick={() => setNewList(false)} />
+                                </footer>
+                            </CreateNewList>
+                            <h1>&nbsp;&nbsp;</h1>
+                        </>
                         :
-                        <AddNewList onClick={() => setNewList(true)}>+ Adicionar lista</AddNewList>
+                        <>
+                            <AddNewList onClick={() => setNewList(true)}>+ Adicionar lista</AddNewList>
+                            <h1>&nbsp;&nbsp;</h1>
+                        </>
                     }
                 </ListWrapper>
             </Container>

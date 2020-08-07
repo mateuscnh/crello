@@ -5,13 +5,12 @@ const FadeIn = keyframes`
 `
 
 export const Container = styled.div`
-    position: fixed;
-    padding: 2%;
-    width: 100vw;
+    padding-bottom: .5%;
+    min-width: 100vw;
     height: 100vh;
     background: url(${props => props.background}) no-repeat center;
+    background-attachment: fixed;
     background-size: cover; 
-    overflow: auto;
 
     button + svg{
         font-size: 22px;
@@ -27,12 +26,15 @@ export const Container = styled.div`
 `
 
 export const ListWrapper = styled.div`
+    padding: 1%;
+    height: 100%;
+
     display: flex;
-    align-items: flex-start;
+    align-items: start;
+    overflow: auto;
 `
 
 export const CreateNewList = styled.div`
-    margin-right: 300px;
     min-width: 270px;
     color: ${props => props.theme.colors.text};
     background-color: ${props => props.theme.colors.listBackground};
@@ -50,7 +52,6 @@ export const CreateNewList = styled.div`
 `
 
 export const AddNewList = styled.div`
-    margin-right: 300px;
     min-width: 270px;
     text-align: center;
     color: #fff;
