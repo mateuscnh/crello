@@ -110,7 +110,10 @@ export default function List({ list }) {
                     </footer>
                 </NewCard>
                 :
-                <footer>
+                <footer
+                    tabIndex="0"
+                    onBlur={(e) => { if (!e.nativeEvent.relatedTarget) setDeleteList(false) }}
+                >
                     <p onClick={() => setNewCard(true)}>+ Adicionar cartão</p>
                     {isDeleteList ?
                         <DeleteList onClick={deleteList}><FaTrashAlt /></DeleteList>

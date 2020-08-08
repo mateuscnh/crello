@@ -35,9 +35,6 @@ export const ListWrapper = styled.div`
         padding: 10px;
         padding-top: 0;
 
-        display: flex;
-        justify-content: space-between;
-
         p{
             font-size: 12px;
             font-weight: 600;
@@ -51,6 +48,11 @@ export const ListWrapper = styled.div`
                 border-radius: 4px;
             }
         }
+    }
+
+    div + footer{  
+        display: flex;
+        justify-content: space-between;
     }
 `
 
