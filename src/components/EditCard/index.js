@@ -49,7 +49,7 @@ function EditCard({ card, onClose }) {
 
         const newListCards = await listCards.map(listCard => {
             const newlistCard = listCard.cards.filter(cardItem => {
-                if (cardItem.id !== card.id) return cardItem;
+                return cardItem.id !== card.id;
             })
             return { ...listCard, cards: newlistCard };
         })

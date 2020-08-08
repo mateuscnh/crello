@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { FaTrashAlt } from 'react-icons/fa';
 
 const FadeIn = keyframes`
     from{opacity: 0}
@@ -34,15 +35,21 @@ export const ListWrapper = styled.div`
         padding: 10px;
         padding-top: 0;
 
+        display: flex;
+        justify-content: space-between;
+
         p{
             font-size: 12px;
             font-weight: 600;
             padding: 6px 16px;
             cursor: pointer;
-                &:hover{
-                    background-color: ${props => props.theme.colors.hover};
-                    border-radius: 4px;
-                }
+            width: 88%;
+            transition: .15s;
+            
+            :hover{
+                background-color: ${props => props.theme.colors.hover};
+                border-radius: 4px;
+            }
         }
     }
 `
@@ -64,5 +71,18 @@ export const NewCard = styled.div`
         display: flex;
         align-items: center;
     }
+`
 
+export const DeleteList = styled.div`
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 10px;
+    cursor: pointer;
+    width: 12%;
+    transition: .15s;
+            
+    :hover{
+        background-color: ${props => props.theme.colors.hover};
+        border-radius: 4px;
+    }
 `

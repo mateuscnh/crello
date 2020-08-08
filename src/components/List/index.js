@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaTrashAlt } from 'react-icons/fa';
 
 import BoardContext from '../Board/context';
 
@@ -9,7 +9,7 @@ import InputTitle from '../InputTitle';
 import LabelColor from '../LabelColor';
 import Card from '../Card';
 
-import { ListWrapper, ListContent, NewCard } from './styles';
+import { ListWrapper, ListContent, NewCard, DeleteList } from './styles';
 import api from '../../services/api';
 
 export default function List({ list }) {
@@ -17,6 +17,8 @@ export default function List({ list }) {
     const { colors } = useContext(BoardContext);
 
     const [isNewCard, setNewCard] = useState(false);
+    const [isDeleteList, setDeleteList] = useState(false);
+
     const [titleList, setTitleList] = useState(list.title);
     const [titleCard, setTitleCard] = useState('');
     const [color, setColor] = useState('');
@@ -45,6 +47,16 @@ export default function List({ list }) {
         setListCards(updateListCards);
 
         setNewCard(false);
+    }
+
+    async function deleteList() {
+        await api.delete(`lists/${list.id}`);
+
+        const newListCards = await listCards.filter(listCard => {
+            return listCard.id !== list.id;
+        })
+
+        setListCards(newListCards)
     }
 
     function handleBlurListTitle(e) {
@@ -98,7 +110,14 @@ export default function List({ list }) {
                     </footer>
                 </NewCard>
                 :
-                <footer><p onClick={() => setNewCard(true)}>+ Adicionar cartão</p></footer>
+                <footer>
+                    <p onClick={() => setNewCard(true)}>+ Adicionar cartão</p>
+                    {isDeleteList ?
+                        <DeleteList onClick={deleteList}><FaTrashAlt /></DeleteList>
+                        :
+                        <DeleteList onClick={() => setDeleteList(true)}>...</DeleteList>
+                    }
+                </footer>
             }
         </ListWrapper>
     );
