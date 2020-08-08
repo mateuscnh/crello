@@ -15,6 +15,10 @@
     {
       "title": "Concluído",
       "id": 3
+    },
+    {
+      "title": "",
+      "id": 4
     }
   ],
   "cards": [
@@ -31,13 +35,6 @@
       "description": "",
       "color": "#333533",
       "id": 2
-    },
-    {
-      "listId": 2,
-      "title": "Terceiro Cartão",
-      "description": "",
-      "color": "#f86624",
-      "id": 3
     },
     {
       "listId": 2,
@@ -98,6 +95,13 @@
       "description": "",
       "color": "#333533",
       "id": 14
+    },
+    {
+      "listId": 1,
+      "title": "Terceiro Cartão",
+      "description": "",
+      "color": "#662e9b",
+      "id": 15
     }
   ],
   "colors": [

@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
 
-import api from '../../services/api';
-import BoardContext from '../Board/context';
+import api from '../../../services/api';
+import BoardContext from '../../Board/context';
 
-import Input from '../Input';
-import Button from '../Button';
-import LabelColor from '../LabelColor';
+import Input from '../../Input';
+import Button from '../../Button';
+import LabelColor from '../../LabelColor';
 
 import { CreateNewCard, FooterNewCard, PrimaryFooter } from './styles';
 

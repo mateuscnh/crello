@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 
-import api from '../../services/api';
-import BoardContext from '../Board/context';
+import api from '../../../services/api';
+import BoardContext from '../../Board/context';
 
-import Input from '../Input';
-import Button from '../Button';
+import Input from '../../Input';
+import Button from '../../Button';
 
 import { CreateNewList, Footer, AddNewList } from './styles';
 
@@ -32,6 +32,11 @@ export default function () {
         }
     }
 
+
+
+
+
+
     return (
         <>
             {createNewList ?
@@ -40,7 +45,8 @@ export default function () {
                     onBlur={(e) => { if (!e.nativeEvent.relatedTarget) setCreateNewList(false) }}
                     onKeyPress={(e) => e.charCode === 13 && document.querySelector('button').click()}
                 >
-                    <Input placeholder="Insira um título para esta lista..."
+                    <Input
+                        placeholder="Insira um título para esta lista..."
                         onChange={(e) => setTitle(e.target.value)}
                     />
 

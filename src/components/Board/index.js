@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import BoardContext from './context';
 
 import Loading from './Loading';
-import NewList from '../NewList';
+import NewList from './NewList';
 
 import { Container, ListWrapper } from './styles';
 

@@ -4,7 +4,7 @@ import BoardContext from '../Board/context';
 
 import InputTitle from '../InputTitle';
 import Card from '../Card';
-import NewCard from '../NewCard';
+import NewCard from './NewCard';
 import DeleteList from './DeleteList';
 
 import { ListWrapper, Header, ListContent } from './styles';
