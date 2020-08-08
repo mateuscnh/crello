@@ -66,7 +66,11 @@ export default function Board() {
 
                     {isNewList ?
                         <>
-                            <CreateNewList tabIndex="0" onBlur={(e) => { if (!e.nativeEvent.relatedTarget) setNewList(false) }}>
+                            <CreateNewList
+                                tabIndex="0"
+                                onBlur={(e) => { if (!e.nativeEvent.relatedTarget) setNewList(false) }}
+                                onKeyPress={(e) => e.charCode === 13 && document.querySelector('button').click()}
+                            >
                                 <Input placeholder="Insira um título para esta lista..."
                                     onChange={(e) => setTitle(e.target.value)}
                                 />

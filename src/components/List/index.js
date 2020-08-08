@@ -82,7 +82,11 @@ export default function List({ list }) {
             </ListContent>
 
             {isNewCard ?
-                <NewCard tabIndex="0" onBlur={(e) => { if (!e.nativeEvent.relatedTarget) setNewCard(false) }}>
+                <NewCard
+                    tabIndex="0"
+                    onBlur={(e) => { if (!e.nativeEvent.relatedTarget) setNewCard(false) }}
+                    onKeyPress={(e) => e.charCode === 13 && document.querySelector('button').click()}
+                >
                     <Input
                         placeholder="Insira um título para este cartão..."
                         onChange={(e) => setTitleCard(e.target.value)}

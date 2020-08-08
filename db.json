@@ -15,6 +15,10 @@
     {
       "title": "Concluído",
       "id": 3
+    },
+    {
+      "title": "Nova Lista",
+      "id": 4
     }
   ],
   "cards": [
@@ -59,6 +63,20 @@
       "description": "",
       "color": "#ea3546",
       "id": 6
+    },
+    {
+      "listId": 2,
+      "title": "Sexto Cartão",
+      "description": "",
+      "color": "#f9c80e",
+      "id": 7
+    },
+    {
+      "listId": 2,
+      "title": "Sétimo Cartão",
+      "description": "",
+      "color": "#ea3546",
+      "id": 8
     }
   ],
   "colors": [
