@@ -4,6 +4,8 @@ export default createGlobalStyle`
     *{
         margin: 0;
         padding: 0;
+        outline: none;
+        border: none;
         box-sizing: border-box; 
         font-family: 'Poppins', sans-serif;
     }
@@ -11,11 +13,6 @@ export default createGlobalStyle`
     body{
         height: 100%;
         background-color: #111;
-    }
-
-    input, button, textarea{
-        outline: none;
-        border: none;
     }
 
     ::-webkit-scrollbar {

@@ -16,14 +16,17 @@ export const ListWrapper = styled.div`
     animation: ${FadeIn} .2s linear;
 
     header{
+        padding: 10px;
         height: 40px;
-        padding: 14px 10px;
     
         input{
-            padding: 15px 10px;
-            height: 100%;
+            padding: 4px 10px;
             width: 100%;
-        }      
+        } 
+
+        svg{
+            right: 10px;
+        }     
     }
 
     footer{
@@ -53,12 +56,13 @@ export const NewCard = styled.div`
     padding-top: 0;
     margin-top: 0;
 
-    animation: ${FadeIn} .2s linear;  
+    animation: ${FadeIn} .2s linear; 
 
-    footer{
+    footer{  
         margin-top: 10px;
         padding: 0;
         display: flex;
         align-items: center;
     }
+
 `

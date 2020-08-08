@@ -19,6 +19,6 @@ const Button = styled.button`
     }
 `
 
-export default function ({ onClick }) {
-    return <Button type="button" onClick={onClick}>Adicionar</Button>;
+export default function ({ ...props }) {
+    return <Button type="button" {...props}>Adicionar</Button>;
 }

@@ -5,12 +5,16 @@
       "title": ""
     },
     {
-      "title": "Primeira Lista",
+      "title": "A fazer",
       "id": 1
     },
     {
-      "title": "Segunda Lista",
+      "title": "Em andamento",
       "id": 2
+    },
+    {
+      "title": "Concluído",
+      "id": 3
     }
   ],
   "cards": [
@@ -39,7 +43,7 @@
       "listId": 2,
       "title": "Terceiro Cartão",
       "description": "",
-      "color": "#f86624",
+      "color": "#c8553d",
       "id": 3
     },
     {
@@ -48,6 +52,13 @@
       "description": "",
       "color": "#662e9b",
       "id": 4
+    },
+    {
+      "listId": 2,
+      "title": "Quinto Cartão",
+      "description": "",
+      "color": "#43bccd",
+      "id": 5
     }
   ],
   "colors": [

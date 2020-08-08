@@ -3,16 +3,16 @@ import { FaCheck } from 'react-icons/fa';
 
 import Colors from './Colors';
 
-import { LabelColor } from './styles';
+import { Container, LabelColor } from './styles';
 
 export default function ({ color, changeColor }) {
     const [colorsActive, setColorsActive] = useState(false);
-    const [chosenColor, setChosenColor] = useState('');
+    const [chosenColor, setChosenColor] = useState(color);
 
-    useEffect(() => { setChosenColor(color) }, []);
+    useEffect(() => { setChosenColor(color) }, [color]);
 
     return (
-        <>
+        <Container>
             <LabelColor className="labelColor" color={chosenColor} onClick={() => setColorsActive(true)}>
                 <FaCheck />
             </LabelColor>
@@ -23,6 +23,6 @@ export default function ({ color, changeColor }) {
                     setColorsActive(false);
                 }} />
             }
-        </>
+        </Container>
     );
 }

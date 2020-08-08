@@ -13,7 +13,7 @@ export const Container = styled.div`
     border-radius: 4px;
     box-shadow: 0 2px 0 0 #ccc;
     cursor: pointer;
-    transition: background-color .2s; 
+    transition: .2s; 
     
     p{
         font-weight: 300;

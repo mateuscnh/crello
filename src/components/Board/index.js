@@ -21,6 +21,8 @@ export default function Board() {
 
     const [isNewList, setNewList] = useState(false);
 
+    const background = "https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop";
+
     useEffect(() => {
         api.get('lists?_embed=cards').then(response => setListCards(response.data));
         api.get('colors').then(response => setColors(response.data));
@@ -54,7 +56,7 @@ export default function Board() {
             {loading &&
                 <Loading />
             }
-            <Container background="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop">
+            <Container background={background}>
 
                 <ListWrapper>
                     {listCards.map(list => {
@@ -64,24 +66,22 @@ export default function Board() {
 
                     {isNewList ?
                         <>
-                            <CreateNewList>
+                            <CreateNewList tabIndex="0" onBlur={(e) => { if (!e.nativeEvent.relatedTarget) setNewList(false) }}>
                                 <Input placeholder="Insira um título para esta lista..."
                                     onChange={(e) => setTitle(e.target.value)}
-                                    onKeyPress={(e) => e.charCode === 13 && document.querySelector('button').click()}
                                 />
                                 <footer>
                                     <Button onClick={addNewList} />
                                     <FaTimes onClick={() => setNewList(false)} />
                                 </footer>
                             </CreateNewList>
-                            <h1>&nbsp;&nbsp;</h1>
                         </>
                         :
                         <>
                             <AddNewList onClick={() => setNewList(true)}>+ Adicionar lista</AddNewList>
-                            <h1>&nbsp;&nbsp;</h1>
                         </>
                     }
+                    <h1>&nbsp;&nbsp;</h1>
                 </ListWrapper>
             </Container>
         </BoardContext.Provider>

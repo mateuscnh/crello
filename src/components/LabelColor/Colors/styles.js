@@ -5,7 +5,7 @@ const FadeIn = keyframes`
 `
 export const Container = styled.div`
     position: absolute;
-    top: 50px;
+    bottom: 0;
     z-index: 10;
     padding: 10px;
     border-radius: 4px;

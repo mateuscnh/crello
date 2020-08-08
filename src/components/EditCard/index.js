@@ -18,8 +18,8 @@ function EditCard({ card, onClose }) {
     const [color, setColor] = useState(card.color);
 
     function handleClose(e) {
-        if (e.target.id === 'modal') onClose();
-        updateCard()
+        if (e.target.id === 'card') onClose();
+        updateCard();
     }
 
     async function updateCard() {
@@ -46,7 +46,7 @@ function EditCard({ card, onClose }) {
     }
 
     return (
-        <Container id="modal" onClick={handleClose}>
+        <Container id="card" onClick={handleClose}>
             <Content>
                 <InputTitle
                     fontSize="22px"

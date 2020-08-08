@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+    position: relative;
+`
+
 export const LabelColor = styled.div`
     width: 34px;
     height: 34px;

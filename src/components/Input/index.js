@@ -15,5 +15,6 @@ export default function ({ ...props }) {
         {...props}
         autoFocus
         autoComplete="off"
+        onKeyPress={(e) => e.charCode === 13 && document.querySelector('button').click()}
     />
 }
