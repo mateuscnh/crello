@@ -5,7 +5,7 @@ import BoardContext from '../../Board/context';
 
 import { Container, Color } from './styles';
 
-export default function Colors({ chosenColor, onClose }) {
+export default function ({ chosenColor, onClose }) {
     const { colors } = useContext(BoardContext);
 
     return (

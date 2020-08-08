@@ -5,6 +5,7 @@ export const Container = styled.div`
 `
 
 export const LabelColor = styled.div`
+    margin-right: 10px;
     width: 34px;
     height: 34px;
     border-radius: 4px;

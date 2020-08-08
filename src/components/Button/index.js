@@ -1,24 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = styled.button`
-    margin-left: 4px;
+const NewButton = styled.button`
     border-radius: 4px;
     height: 34px;
     padding: 6px 10px;
     border: none;
     color: #fff;
-    background-color: #61BD4F;
+    background-color: ${props => props.theme.colors.button};
     transition: .2s;
     outline: none;
         
     cursor: pointer;
 
     :hover{
-        background-color: #6fd25b;
+        background-color: ${props => props.theme.colors.buttonHover};
     }
 `
 
 export default function ({ ...props }) {
-    return <Button type="button" {...props}>Adicionar</Button>;
+    return <NewButton type="button" {...props}>Adicionar</NewButton>;
 }
+

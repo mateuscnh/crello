@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaEdit } from 'react-icons/fa';
 
 import { Container, CardLabel } from './styles';
-import EditCard from '../EditCard';
+import EditCard from './EditCard';
 
 export default function ({ card }) {
     const [editCard, setEditCard] = useState(false);

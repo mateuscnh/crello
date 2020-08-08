@@ -67,5 +67,4 @@ export const AddNewList = styled.div`
     :hover{
         background-color: rgba(250, 250, 250, .4);
     }
-
 `

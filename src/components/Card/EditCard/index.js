@@ -1,15 +1,15 @@
 import React, { useContext, useState } from 'react';
 
-import BoardContext from '../Board/context';
+import BoardContext from '../../Board/context';
 
-import api from '../../services/api';
+import api from '../../../services/api';
 
-import LabelColor from '../LabelColor';
-import InputTitle from '../InputTitle';
+import LabelColor from '../../LabelColor';
+import InputTitle from '../../InputTitle';
 
 import { Container, Content, TextArea, CloseCard, QuoteIcon, TagIcon, DeleteCard } from './styles';
 
-function EditCard({ card, onClose }) {
+export default function ({ card, onClose }) {
     const { listCards, setListCards } = useContext(BoardContext);
 
     const [title, setTitle] = useState(card.title);
@@ -78,5 +78,3 @@ function EditCard({ card, onClose }) {
         </Container>
     );
 }
-
-export default EditCard;
