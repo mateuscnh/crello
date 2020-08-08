@@ -17,7 +17,7 @@ export default function Board() {
     const [colors, setColors] = useState([]);
     const [title, setTitle] = useState('');
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const [isNewList, setNewList] = useState(false);
 
@@ -25,12 +25,12 @@ export default function Board() {
         api.get('lists?_embed=cards').then(response => setListCards(response.data));
         api.get('colors').then(response => setColors(response.data));
 
-        setTimeout(() => {
-            document.querySelector('#loading').style.opacity = 0;
-            setTimeout(() => {
-                setLoading(false);
-            }, 500);
-        }, 1500);
+        // setTimeout(() => {
+        //     document.querySelector('#loading').style.opacity = 0;
+        //     setTimeout(() => {
+        //         setLoading(false);
+        //     }, 500);
+        // }, 1500);
 
     }, []);
 

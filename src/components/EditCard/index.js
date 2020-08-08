@@ -6,8 +6,9 @@ import BoardContext from '../Board/context';
 import api from '../../services/api';
 
 import LabelColor from '../LabelColor';
+import InputTitle from '../InputTitle';
 
-import { Container, Content, Input, TextArea } from './styles';
+import { Container, Content, TextArea } from './styles';
 
 function EditCard({ card, onClose }) {
     const { listCards, setListCards } = useContext(BoardContext);
@@ -47,11 +48,10 @@ function EditCard({ card, onClose }) {
     return (
         <Container id="modal" onClick={handleClose}>
             <Content>
-                <Input
-                    type="text"
+                <InputTitle
+                    fontSize="22px"
                     defaultValue={card.title}
                     onChange={(e) => setTitle(e.target.value)}
-                    autoComplete="off"
                 />
                 <FaTimes onClick={onClose} />
 

@@ -10,12 +10,10 @@ const Input = styled.input`
     box-shadow: 0 2px 0 0 #ccc;
 `
 
-export default function ({ placeholder, onChange, onKeyPress }) {
+export default function ({ ...props }) {
     return <Input
+        {...props}
         autoFocus
         autoComplete="off"
-        placeholder={placeholder}
-        onChange={onChange}
-        onKeyPress={onKeyPress}
     />
 }

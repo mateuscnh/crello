@@ -63,20 +63,6 @@ export const Content = styled.div`
     }
 `
 
-export const Input = styled.input`
-    width: 90%;
-    padding: 10px;
-    font-size: 22px;
-    font-weight: bold;
-    background: none;
-    border-radius: 4px;
-    color: ${props => props.theme.colors.text};
-    
-    :focus{
-        background-color: ${props => props.theme.colors.cardBackground};
-    }
-`
-
 export const TextArea = styled.textarea`
     width: 90%;
     min-height: 60px;

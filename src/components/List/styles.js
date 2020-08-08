@@ -17,11 +17,13 @@ export const ListWrapper = styled.div`
 
     header{
         height: 40px;
+        padding: 14px 10px;
     
-        p{
-            padding: 14px 20px;
-        }
-        
+        input{
+            padding: 15px 10px;
+            height: 100%;
+            width: 100%;
+        }      
     }
 
     footer{

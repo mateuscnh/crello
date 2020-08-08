@@ -5,6 +5,7 @@ import BoardContext from '../Board/context';
 
 import Button from '../Button';
 import Input from '../Input';
+import InputTitle from '../InputTitle';
 import LabelColor from '../LabelColor';
 import Card from '../Card';
 
@@ -16,7 +17,8 @@ export default function List({ list }) {
     const { colors } = useContext(BoardContext);
 
     const [isNewCard, setNewCard] = useState(false);
-    const [title, setTitle] = useState('');
+    const [titleList, setTitleList] = useState(list.title);
+    const [titleCard, setTitleCard] = useState('');
     const [color, setColor] = useState('');
 
     useEffect(() => {
@@ -28,7 +30,7 @@ export default function List({ list }) {
 
         const newCard = await api.post('cards', {
             listId: list.id,
-            title,
+            title: titleCard,
             description,
             color
         })
@@ -45,12 +47,35 @@ export default function List({ list }) {
         setNewCard(false);
     }
 
+    function handleBlurListTitle(e) {
+        if (titleList === list.title) return;
+
+        api.patch(`lists/${list.id}`, {
+            title: titleList
+        })
+
+        const updateListCards = listCards.map(item => {
+            if (item.id === list.id) {
+                item.title = titleList;
+                return item;
+            }
+            return item;
+        })
+
+        setListCards(updateListCards);
+    }
+
     return (
         <ListWrapper>
             <header>
-                <p>{list.title}</p>
+                <InputTitle
+                    fontSize="14px"
+                    defaultValue={list.title}
+                    onChange={(e) => setTitleList(e.target.value)}
+                    onBlur={handleBlurListTitle}
+                />
             </header>
-            <ListContent id="target">
+            <ListContent>
                 {list.cards.map(card => {
                     return <Card key={card.id} card={card} />
                 })}
@@ -60,7 +85,7 @@ export default function List({ list }) {
                 <NewCard>
                     <Input
                         placeholder="Insira um título para este cartão..."
-                        onChange={(e) => setTitle(e.target.value)}
+                        onChange={(e) => setTitleCard(e.target.value)}
                         onKeyPress={(e) => e.charCode === 13 && document.querySelector('button').click()}
                     />
                     <footer>
