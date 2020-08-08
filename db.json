@@ -26,39 +26,39 @@
       "color": ""
     },
     {
-      "listId": 1,
-      "title": "Primeiro Cartão",
-      "description": "",
-      "color": "#333533",
-      "id": 1
-    },
-    {
       "listId": 2,
       "title": "Segundo Cartão",
       "description": "",
-      "color": "#f9c80e",
+      "color": "#333533",
       "id": 2
     },
     {
       "listId": 2,
       "title": "Terceiro Cartão",
       "description": "",
-      "color": "#c8553d",
+      "color": "#f86624",
       "id": 3
     },
     {
       "listId": 2,
       "title": "Quarto Cartão",
       "description": "",
-      "color": "#662e9b",
+      "color": "#43bccd",
       "id": 4
     },
     {
-      "listId": 2,
+      "listId": 3,
       "title": "Quinto Cartão",
       "description": "",
-      "color": "#43bccd",
+      "color": "#f9c80e",
       "id": 5
+    },
+    {
+      "listId": 1,
+      "title": "Primeiro Cartão",
+      "description": "",
+      "color": "#ea3546",
+      "id": 6
     }
   ],
   "colors": [

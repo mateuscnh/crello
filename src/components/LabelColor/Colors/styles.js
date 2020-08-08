@@ -5,22 +5,23 @@ const FadeIn = keyframes`
 `
 export const Container = styled.div`
     position: absolute;
-    bottom: 0;
+    top: 0;
     z-index: 10;
     padding: 10px;
-    border-radius: 4px;
-    width: 200px;
+    border-radius: 0 4px 4px 4px;
+
+    display: flex;
 
     color: ${props => props.theme.colors.text};
-    background-color: ${props => props.theme.colors.listBackground};
-    box-shadow: 0 6px 20px 0 #555;
+    background-color: ${props => props.theme.colors.cardBackground};
+    box-shadow: 0 2px 0 0 #ccc;
 
     animation: ${FadeIn} .15s linear;
 `
 
 export const Color = styled.div`
-    margin-bottom: 1px;
-    width: 100%;
+    margin-right: 2px;
+    width: 32px;
     height: 32px;
     padding: 8px;
     border-radius: 4px;
@@ -28,8 +29,8 @@ export const Color = styled.div`
     color: #fff;
     text-align: right;
     cursor: pointer;
+    
     :hover{
         opacity: .9;
     }
-
 `;

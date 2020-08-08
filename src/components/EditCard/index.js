@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import { FaTimes, FaQuoteRight, FaTag } from 'react-icons/fa';
 
 import BoardContext from '../Board/context';
 
@@ -8,7 +7,7 @@ import api from '../../services/api';
 import LabelColor from '../LabelColor';
 import InputTitle from '../InputTitle';
 
-import { Container, Content, TextArea } from './styles';
+import { Container, Content, TextArea, CloseCard, QuoteIcon, TagIcon, DeleteCard } from './styles';
 
 function EditCard({ card, onClose }) {
     const { listCards, setListCards } = useContext(BoardContext);
@@ -45,6 +44,19 @@ function EditCard({ card, onClose }) {
         setListCards(updateListCards);
     }
 
+    async function deleteCard() {
+        await api.delete(`cards/${card.id}`);
+
+        const newListCards = await listCards.map(listCard => {
+            const newlistCard = listCard.cards.filter(cardItem => {
+                if (cardItem.id !== card.id) return cardItem;
+            })
+            return { ...listCard, cards: newlistCard };
+        })
+
+        setListCards(newListCards);
+    }
+
     return (
         <Container id="card" onClick={handleClose}>
             <Content>
@@ -53,14 +65,15 @@ function EditCard({ card, onClose }) {
                     defaultValue={card.title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
-                <FaTimes onClick={onClose} />
+                <CloseCard onClick={onClose} />
 
-                <h3><FaQuoteRight />Descrição</h3>
+                <h3><QuoteIcon />Descrição</h3>
                 <TextArea placeholder="Adicione uma descrição mais detalhada..." defaultValue={card.description} onChange={(e) => setDescription(e.target.value)} />
 
-                <h3><FaTag />Etiqueta</h3>
+                <h3><TagIcon />Etiqueta</h3>
                 <LabelColor color={card.color} changeColor={(color) => setColor(color)} />
 
+                <DeleteCard onClick={deleteCard} />
             </Content>
         </Container>
     );

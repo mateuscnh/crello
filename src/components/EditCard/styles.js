@@ -1,4 +1,6 @@
 import styled, { keyframes } from 'styled-components';
+import { FaTimes, FaQuoteRight, FaTag, FaTrashAlt } from 'react-icons/fa';
+
 
 const FadeIn = keyframes`
     from{opacity: 0}
@@ -37,27 +39,6 @@ export const Content = styled.div`
         padding: 6px;
     }
 
-    > svg{
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        color: ${props => props.theme.colors.text};
-
-        cursor: pointer;
-
-        transition: transform .2s;
-        
-        :hover{
-            transform: scale(1.3);
-        }
-    }
-
-    h3 svg{
-        font-size: 12px;
-        margin-right: 10px;
-        opacity: .5;
-    }
-
     h3 + div, textarea{
         margin-left: 28px;
     }
@@ -75,5 +56,46 @@ export const TextArea = styled.textarea`
     
     :focus{
         background-color: ${props => props.theme.colors.cardBackground};
+    }
+`
+
+export const CloseCard = styled(FaTimes)`
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    cursor: pointer;
+
+    transition: transform .2s;
+        
+    :hover{
+        transform: scale(1.15);
+    }
+`
+
+export const QuoteIcon = styled(FaQuoteRight)`
+    font-size: 12px;
+    margin-right: 10px;
+    opacity: .5;
+`
+
+export const TagIcon = styled(FaTag)`
+    font-size: 12px;
+    margin-right: 10px;
+    opacity: .5;
+`
+
+export const DeleteCard = styled(FaTrashAlt)`
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+
+    transition: transform .2s;
+        
+    :hover{
+        transform: scale(1.15);
     }
 `
