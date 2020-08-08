@@ -7,6 +7,7 @@ const NewButton = styled.button`
     padding: 6px 10px;
     border: none;
     color: #fff;
+    box-shadow: 0 2px 0 0 ${props => props.theme.colors.buttonHover};
     background-color: ${props => props.theme.colors.button};
     transition: .2s;
     outline: none;

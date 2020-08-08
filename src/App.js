@@ -1,5 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 import main from './styles/theme/light';
 import GlobalStyle from './styles/global';
@@ -10,7 +12,9 @@ function App() {
   return (
     <ThemeProvider theme={main}>
       <GlobalStyle />
-      <Board />
+      <DndProvider backend={HTML5Backend}>
+        <Board />
+      </DndProvider>
     </ThemeProvider>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import produce from 'immer';
 
 import BoardContext from './context';
 
@@ -21,14 +22,45 @@ export default function () {
         api.get('colors').then(response => setColors(response.data));
     }, []);
 
+    useEffect(() => {
+        updateDatabase();
+    }, [listCards]);
+
+    function updateDatabase() {
+        listCards.forEach(list => {
+            if (list.id === 0) return;
+
+            list.cards.forEach(async card => {
+                const { id, title, description, color } = card;
+
+                await api.put(`cards/${card.id}`, {
+                    id,
+                    listId: list.id,
+                    title,
+                    description,
+                    color
+                });
+            })
+        })
+    }
+
+    function moveCard(fromList, toList, from, to) {
+        setListCards(produce(listCards, draft => {
+            const dragged = draft[fromList].cards[from];
+
+            draft[fromList].cards.splice(from, 1);
+            draft[toList].cards.splice(to, 0, dragged);
+        }))
+    }
+
     return (
-        <BoardContext.Provider value={{ listCards, setListCards, colors, setColors }}>
+        <BoardContext.Provider value={{ listCards, setListCards, colors, setColors, moveCard, updateDatabase }}>
             <Loading />
             <Container background={background}>
                 <ListWrapper>
-                    {listCards.map(list => {
+                    {listCards.map((list, index) => {
                         if (list.id === 0) return null;
-                        return <List key={list.id} list={list} />
+                        return <List key={list.id} index={index} list={list} />
                     })}
                     <NewList />
                 </ListWrapper>

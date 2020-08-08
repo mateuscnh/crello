@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 const FadeInRight = keyframes`
     from{width: 0%}
@@ -10,10 +10,11 @@ export const Container = styled.div`
     min-height: 40px;
     margin: 10px;
     padding: 10px;
+    border: 2px solid transparent;
     border-radius: 4px;
     box-shadow: 0 2px 0 0 #ccc;
     cursor: pointer;
-    transition: .2s; 
+    transition: .15s; 
     
     p{
         font-weight: 300;
@@ -28,6 +29,10 @@ export const Container = styled.div`
         opacity: .8;
     }
 
+    :active svg{
+        opacity: 0;
+    }
+
     svg{
         position: absolute;
         top: 50%;
@@ -36,6 +41,18 @@ export const Container = styled.div`
         opacity: 0;
         transition: .15s;
     }
+
+    ${props => props.isDragging && css`
+        border: 2px dashed rgba( 0, 0, 0, .2);
+        border-radius: 4px;
+        box-shadow: none;
+        background: transparent;
+        cursor: grabbing;
+
+        p, span{
+            opacity: 0;
+        }
+    `}
 `
 
 export const CardLabel = styled.span`

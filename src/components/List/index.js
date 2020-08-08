@@ -11,7 +11,7 @@ import { ListWrapper, Header, ListContent } from './styles';
 
 import api from '../../services/api';
 
-export default function ({ list }) {
+export default function ({ list, index: listIndex }) {
     const { listCards, setListCards } = useContext(BoardContext);
 
     const [title, setTitle] = useState(list.title);
@@ -46,8 +46,13 @@ export default function ({ list }) {
                 <DeleteList listId={list.id} />
             </Header>
             <ListContent>
-                {list.cards.map(card => {
-                    return <Card key={card.id} card={card} />
+                {list.cards.map((card, index) => {
+                    return <Card
+                        key={card.id}
+                        listIndex={listIndex}
+                        index={index}
+                        card={card}
+                    />
                 })}
             </ListContent>
             <NewCard listId={list.id} />
