@@ -5,7 +5,6 @@ import { FaLinkedinIn, FaInstagram, FaGithub } from 'react-icons/fa';
 const Container = styled.footer`
     position: absolute;
     top: -40px;
-    right: 20px;
     width: 100%;
     height: 40px;
     text-align: center;

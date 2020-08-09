@@ -26,7 +26,7 @@ export const Content = styled.div`
     position: relative;
     padding: 20px;
     padding-bottom: 60px;
-    min-width: 400px;
+    max-width: 400px;
     border-radius: 4px;
 
     color: ${props => props.theme.colors.text};
@@ -41,6 +41,10 @@ export const Content = styled.div`
 
     h3 + div, textarea{
         margin-left: 28px;
+    }
+
+    input{
+        width: 92%;
     }
 `
 
