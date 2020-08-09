@@ -11,6 +11,7 @@ export const Container = styled.div`
 `
 
 export const Input = styled.input`
+    width: 100%;
     padding: 0 10px;
     font-size: ${props => props.fontSize};
     font-weight: bold;

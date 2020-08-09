@@ -30,6 +30,11 @@ export const Header = styled.header`
         top: 14px;
         right: 10px;
     } 
+
+    @media (max-width: 700px){
+        max-width: 215px;
+        background-color: red;
+    }
 `
 
 export const ListContent = styled.div`
