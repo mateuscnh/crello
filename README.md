@@ -1,11 +1,7 @@
 <p align="center">
   <img alt="Logo do projeto" width="150px" src="./.github/logo.png" />
   </br>
-  <a href="https://crello.mateuscnh.vercel.app/">Vercel deploy</a>
-</p>
-
-<p align="center">
-  <img alt="Mockup" src="./.github/mockup.png" width="100%">
+  <a href="https://crello.mateuscnh.vercel.app/">Visit Project</a>
 </p>
 
 ## 💻 Project
@@ -23,3 +19,12 @@ A clone version of Trello... 'Crello' :smile:. Developmented to practice ReactJS
 </br>
 
 </br>
+
+<p align="center">
+  <img alt="Mockup" src="./.github/mockup.png" width="100%">
+  </br>
+  <a href="https://crello.mateuscnh.vercel.app/">Visit Project</a>
+</p>
+
+
+
