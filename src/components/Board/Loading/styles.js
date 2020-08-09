@@ -1,9 +1,13 @@
 import styled, { keyframes } from 'styled-components';
 
-export const HeigthAnimate = keyframes`
+const HeigthAnimate = keyframes`
     0% { height: 50%; }
     50% {height: 100%;}
     100% { height: 50%; }
+`
+
+const BlurAnimate = keyframes`
+    from{filter: blur(500px);}
 `
 
 export const Container = styled.div`
@@ -18,17 +22,20 @@ export const Container = styled.div`
     display: grid;
     place-items: center;
 
-    background-color: #111;
+    background: #163C46 url(${props => props.background}) no-repeat center;
+    background-size: cover;
 
     transition: .5s;
+
+    animation: ${BlurAnimate} ${props => props.time} linear infinite;
 `
 
 export const BaseLogo = styled.div`
-    background-color: #007FC8;
-    width: 60px;
-    height: 60px;
+    background-color: #43777D;
+    width: 50px;
+    height: 50px;
     padding: 10px;
-    box-shadow: 0 4px 1px 0 #0041c1;
+    box-shadow: 0 2px 1px 0 #163C46;
     border-radius: 10px;
 
     display: flex;
@@ -37,7 +44,7 @@ export const BaseLogo = styled.div`
 
 export const Card = styled.div`
     background-color: #fff;
-    width: 16px;
+    width: 12px;
     height: 50%;
     border-radius: 4px;
 

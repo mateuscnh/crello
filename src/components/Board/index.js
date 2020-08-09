@@ -11,6 +11,8 @@ import { Container, ListWrapper } from './styles';
 import List from '../List';
 import api from '../../services/api';
 
+import Header from '../Header';
+
 export default function () {
     const background = "https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop";
 
@@ -60,9 +62,10 @@ export default function () {
     }
 
     return (
-        <BoardContext.Provider value={{ listCards, setListCards, colors, setColors, moveCard }}>
+        <BoardContext.Provider value={{ background, listCards, setListCards, colors, setColors, moveCard }}>
             <Loading />
             <Container background={background}>
+                <Header />
                 <ListWrapper>
                     {listCards.map((list, index) => {
                         if (list.id === 0) return null;

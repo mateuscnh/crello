@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
+import BoardContext from '../context';
+
 import { Container, BaseLogo, Card } from './styles';
+import { useContext } from 'react';
 
 export default function () {
+    const { background } = useContext(BoardContext);
+
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -17,7 +22,7 @@ export default function () {
     return (
         <>
             {loading &&
-                <Container id="loading">
+                <Container id="loading" background={background}>
                     <BaseLogo>
                         <Card time=".8s" />
                         <Card time=".6s" />

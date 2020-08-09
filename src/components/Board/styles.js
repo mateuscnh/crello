@@ -5,6 +5,7 @@ const FadeIn = keyframes`
 `
 
 export const Container = styled.div`
+    padding-top: 40px;
     padding-bottom: .5%;
     min-width: 100vw;
     height: 100vh;

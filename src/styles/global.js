@@ -12,7 +12,7 @@ export default createGlobalStyle`
 
     body{
         height: 100%;
-        background-color: #111;
+        background-color: #163C46;
     }
 
     ::-webkit-scrollbar {
