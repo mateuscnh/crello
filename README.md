@@ -8,8 +8,6 @@
   <img alt="Mockup" src="./.github/mockup.png" width="100%">
 </p>
 
-</br>
-
 ## 💻 Project
 
 A clone version of Trello... 'Crello' :smile:. Developmented to practice ReactJS with Styled-Components and more...
