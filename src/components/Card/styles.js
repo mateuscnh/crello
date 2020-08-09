@@ -48,10 +48,23 @@ export const Container = styled.div`
         box-shadow: none;
         background: transparent;
         cursor: grabbing;
+        transition: .2s;
 
         p, span{
             opacity: 0;
         }
+        
+    `}
+    
+    ${props => props.isOver && css`
+        border: 2px dashed rgba( 0, 0, 0, .2);
+        cursor: grabbing;
+        background: transparent;
+
+        p, span{
+            opacity: 0;
+        }
+        
     `}
 `
 

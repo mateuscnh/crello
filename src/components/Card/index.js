@@ -22,8 +22,11 @@ export default function ({ card, index, listIndex }) {
         })
     });
 
-    const [, dropRef] = useDrop({
+    const [{ isOver }, dropRef] = useDrop({
         accept: 'CARD',
+        collect: monitor => ({
+            isOver: monitor.isOver()
+        }),
         hover(item, monitor) {
             const draggedListIndex = item.listIndex;
             const targetListIndex = listIndex;
@@ -57,6 +60,7 @@ export default function ({ card, index, listIndex }) {
             <Container
                 ref={ref}
                 isDragging={isDragging}
+                isOver={isOver}
                 onClick={() => setEditCard(true)}
             >
                 <FaEdit />
