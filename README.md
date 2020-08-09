@@ -8,8 +8,6 @@
 
 A clone version of Trello... 'Crello' :smile:. Developmented to practice ReactJS with Styled-Components and more...
 
-</br>
-
 ## 🚀 Technologies
 
 - ReactJS
