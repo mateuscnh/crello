@@ -15,11 +15,10 @@ export default function ({ card, index, listIndex }) {
     const ref = useRef();
     const { moveCard } = useContext(BoardContext);
 
-    const [{ isDragging, dropResult }, dragRef] = useDrag({
+    const [{ isDragging }, dragRef] = useDrag({
         item: { type: 'CARD', index, listIndex },
         collect: monitor => ({
-            isDragging: monitor.isDragging(),
-            didDrop: monitor.didDrop,
+            isDragging: monitor.isDragging()
         })
     });
 
@@ -58,7 +57,6 @@ export default function ({ card, index, listIndex }) {
             <Container
                 ref={ref}
                 isDragging={isDragging}
-                dropResult={dropResult}
                 onClick={() => setEditCard(true)}
             >
                 <FaEdit />

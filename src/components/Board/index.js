@@ -23,26 +23,32 @@ export default function () {
     }, []);
 
     useEffect(() => {
+        function updateDatabase() {
+            try {
+                listCards.forEach(list => {
+                    if (list.id === 0) return;
+
+                    list.cards.forEach(async card => {
+                        const { id, title, description, color } = card;
+
+                        await api.put(`cards/${card.id}`, {
+                            id,
+                            listId: list.id,
+                            title,
+                            description,
+                            color
+                        });
+                    })
+                })
+            } catch (e) {
+                alert('Unexpected error: ', e);
+            }
+        }
+
         updateDatabase();
-    }, [listCards]);
 
-    function updateDatabase() {
-        listCards.forEach(list => {
-            if (list.id === 0) return;
+    }, [listCards])
 
-            list.cards.forEach(async card => {
-                const { id, title, description, color } = card;
-
-                await api.put(`cards/${card.id}`, {
-                    id,
-                    listId: list.id,
-                    title,
-                    description,
-                    color
-                });
-            })
-        })
-    }
 
     function moveCard(fromList, toList, from, to) {
         setListCards(produce(listCards, draft => {
@@ -54,7 +60,7 @@ export default function () {
     }
 
     return (
-        <BoardContext.Provider value={{ listCards, setListCards, colors, setColors, moveCard, updateDatabase }}>
+        <BoardContext.Provider value={{ listCards, setListCards, colors, setColors, moveCard }}>
             <Loading />
             <Container background={background}>
                 <ListWrapper>

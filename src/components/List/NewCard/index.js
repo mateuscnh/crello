@@ -30,19 +30,22 @@ export default function ({ listId }) {
                 color
             })
 
+            const { data } = newCard;
+
             const newListCards = await listCards.map(list => {
                 if (list.id === listId) {
-                    list.cards.push(newCard.data)
+                    const newCards = [...list.cards, data];
+                    return { ...list, cards: newCards }
                 }
                 return list;
             })
 
+
             setListCards(newListCards);
 
             setCreateNewCard(false);
-
         } catch (e) {
-            alert("Unexpected error");
+            alert('Unexpected Error: ', e);
         }
     }
 

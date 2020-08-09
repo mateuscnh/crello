@@ -17,8 +17,10 @@ export default function ({ card, onClose }) {
     const [color, setColor] = useState(card.color);
 
     function handleClose(e) {
-        if (e.target.id === 'card') onClose();
-        updateCard();
+        if (e.target.id === 'card') {
+            onClose();
+            updateCard();
+        };
     }
 
     async function updateCard() {
@@ -45,16 +47,20 @@ export default function ({ card, onClose }) {
     }
 
     async function deleteCard() {
-        await api.delete(`cards/${card.id}`);
+        try {
+            await api.delete(`cards/${card.id}`);
 
-        const newListCards = await listCards.map(listCard => {
-            const newlistCard = listCard.cards.filter(cardItem => {
-                return cardItem.id !== card.id;
+            const newListCards = await listCards.map(listCard => {
+                const newCards = listCard.cards.filter(cardItem => {
+                    return cardItem.id !== card.id;
+                })
+                return { ...listCard, cards: newCards };
             })
-            return { ...listCard, cards: newlistCard };
-        })
 
-        setListCards(newListCards);
+            setListCards(newListCards);
+        } catch (e) {
+            alert('Unexpected error: ', e);
+        }
     }
 
     return (
@@ -65,7 +71,7 @@ export default function ({ card, onClose }) {
                     defaultValue={card.title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
-                <CloseCard onClick={onClose} />
+                <CloseCard onClick={() => { onClose(); updateCard(); }} />
 
                 <h3><QuoteIcon />Descrição</h3>
                 <TextArea placeholder="Adicione uma descrição mais detalhada..." defaultValue={card.description} onChange={(e) => setDescription(e.target.value)} />
@@ -73,7 +79,7 @@ export default function ({ card, onClose }) {
                 <h3><TagIcon />Etiqueta</h3>
                 <LabelColor color={card.color} changeColor={(color) => setColor(color)} />
 
-                <DeleteCard onClick={deleteCard} />
+                <DeleteCard id="delete" onClick={deleteCard} />
             </Content>
         </Container>
     );
